@@ -411,8 +411,7 @@ class _LocationPickerScreenState extends State<LocationPickerScreen> {
     final isDesktop = screenWidth >= 800;
     final iconSize = isDesktop ? 50.0 : 50.0;
     final textSize = isDesktop ? 16.0 : 14.0;
-    // final cardWidth = isDesktop ? 350.0 : (screenWidth - 32); // Not used for bubble width directly
-
+    
     // --- Constants for the custom bubble ---
     final double customBubbleWidth =
         isDesktop ? 260.0 : 290.0; // Adjusted width for the text
@@ -423,10 +422,7 @@ class _LocationPickerScreenState extends State<LocationPickerScreen> {
     final double desiredGapAbovePin =
         5.0; // Small gap between pin top and triangle tip
 
-    // pinOffsetY calculation for the custom bubble
-    // This is the total vertical distance the *top* of the Positioned bubble widget
-    // needs to be shifted upwards from the pin's anchor point (_markerScreenPos.y)
-    // to make the triangle's tip sit 'desiredGapAbovePin' above the pin's top.
+    
     final double pinOffsetY =
         estimatedBubbleRectHeight + triangleHeight + desiredGapAbovePin;
 
@@ -473,7 +469,7 @@ class _LocationPickerScreenState extends State<LocationPickerScreen> {
                     urlTemplate:
                         "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
                     userAgentPackageName:
-                        'com.example.flutter_application_1', // Replace
+                        'com.example.flutter_application_1', 
                   ),
                   if (_isMapReady)
                     MarkerLayer(
@@ -556,7 +552,7 @@ class _LocationPickerScreenState extends State<LocationPickerScreen> {
                 ),
               ),
 
-              // Search box and results (Your existing code - unchanged)
+              // Search box and results 
               Positioned(
                 top: padding.top + 65,
                 left: 16,
@@ -661,14 +657,11 @@ class _LocationPickerScreenState extends State<LocationPickerScreen> {
                       title: "Your order will be picked here",
                       subtitle: "Place the pin accurately on the map",
                       bubbleWidth: customBubbleWidth,
-                      // You can pass custom text styles if needed
-                      // titleStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white),
-                      // subtitleStyle: TextStyle(fontSize: 12, color: Colors.white70),
                     ),
                   ),
                 ),
 
-              // Bottom address card and confirm button (Your existing code - unchanged)
+              // Bottom address card and confirm button 
               Positioned(
                 bottom: 0,
                 left: 0,
